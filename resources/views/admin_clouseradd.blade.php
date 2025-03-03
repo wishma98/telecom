@@ -5,14 +5,6 @@
         </h2>
     </x-slot>
 
-    <!-- Back Button -->
-    <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
-        <a href="{{ route('admin_dashboard') }}"
-            class="inline-block bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-blue-700 hover:shadow-lg transition duration-300 ease-in-out">
-            Back
-        </a>
-    </div>
-
     <!DOCTYPE html>
     <html lang="en">
 
@@ -29,7 +21,7 @@
 
         .container {
             max-width: 800px;
-            margin: 20px auto;
+            margin: 150px auto;
             padding: 30px;
             background: white;
             border-radius: 12px;
@@ -125,10 +117,40 @@
             text-align: center;
             margin-top: 20px;
         }
+
+        .back-button {
+            position: absolute;
+            top: 200px;
+            left: 20px;
+        }
+
+        .back-button a {
+            background: linear-gradient(135deg, #08d43b, #1a47c4);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .back-button a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
         </style>
     </head>
 
     <body>
+        <!-- Back Button -->
+        <div class="back-button">
+            <a href="{{ route('admin_dashboard') }}"
+                class="inline-block bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-blue-700 hover:shadow-lg transition duration-300 ease-in-out">
+                Back
+            </a>
+        </div>
+
         @if(session('success'))
         <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative max-w-7xl mx-auto mb-4"
             role="alert">
